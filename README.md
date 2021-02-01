@@ -32,6 +32,10 @@ $ npm run test:cov
 ```bash
   nest g module cats
 ```
+# 生成路由守卫
+```bash
+nest g guard golbalguard/auth
+```
 
 # 设置全局中间件的两种形式
 ```text
@@ -62,4 +66,10 @@ export class GetConfigService {
   }
 }
 ```
-"# nestjs-mysql-redis" 
+#  @HttpCode(200) 修改请求成功之后返回的状态码
+
+# 路由守卫一种是局部的路由守卫，一种是全局的路由守卫，路由守卫针对的是做权限校验例子见（src/utils/guard以及src/utils/golbalguard）
+
+# filter 异常捕获过滤器
+
+

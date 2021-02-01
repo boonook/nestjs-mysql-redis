@@ -1,4 +1,4 @@
-import { Controller,Get} from '@nestjs/common';
+import { Controller,Get,HttpCode} from '@nestjs/common';
 import { CatsService } from '@views/cats/cats.service';
 import {Result} from '@/middlewares/result/result.interface'
 import { GetConfigService } from '@/utils/getConfig';
@@ -13,6 +13,7 @@ export class CatsController {
 
   }
   @Get('list')
+  @HttpCode(200)
   async list(): Promise<Result>{
     let data = await this.appService.list();
     console.log(this.GetConfigService.getConfig('我是公共服务'));
