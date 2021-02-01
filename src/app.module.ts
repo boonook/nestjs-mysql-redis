@@ -4,11 +4,13 @@ import { ArticleModule } from '@views/article/article.module';
 import { GlobalMiddleware } from '@/middlewares/global/global.middleware';
 import { ErrorsInterceptor } from '@/middlewares/error/errors.interceptor';
 import { CatsModule } from '@views/cats/cats.module';
+import { UserModule } from '@views/user/user.module';
 @Module({
   ////注入module
   imports: [
     ArticleModule,
     CatsModule,
+    UserModule
   ],
   ///注入controllers
   controllers:[],
