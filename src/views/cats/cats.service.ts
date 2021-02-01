@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 @Injectable()
-export class ArticleService {
+export class CatsService {
   list(){
-    return '123123123123'
+    return 'cats-list'
   }
 }
