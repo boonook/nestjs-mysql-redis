@@ -13,7 +13,6 @@ export class CatsController {
 
   }
   @Get('list')
-  @HttpCode(200)
   async list(): Promise<Result>{
     let data = await this.appService.list();
     console.log(this.GetConfigService.getConfig('我是公共服务'));
