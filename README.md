@@ -70,6 +70,6 @@ export class GetConfigService {
 
 # 路由守卫一种是局部的路由守卫，一种是全局的路由守卫，路由守卫针对的是做权限校验例子见（src/utils/guard以及src/utils/golbalguard）
 
-# filter 异常捕获过滤器
+# filter 异常捕获过滤器在main.ts中进行注入
 
 

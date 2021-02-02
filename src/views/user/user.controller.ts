@@ -9,14 +9,12 @@ export class UserController {
   constructor(private readonly appService: UserService) {}
 
   @Get('list')
-  @HttpCode(200)
   async list(): Promise<Result>{
     let data = await this.appService.list();
     return { code: 200, message: data };
   }
 
   @Post('login')
-  @HttpCode(200)
   @UseGuards(AuthGuard)
   async login(@Body() userlogindto:UserLoginDto): Promise<Result>{
     return { code:200,message: '操作成功',data:userlogindto};
