@@ -1,14 +1,19 @@
 import { Controller, Get, Query, Param, Delete, HttpCode } from '@nestjs/common';
 import { ArticleService } from './article.service';
 import {Result} from '@/middlewares/result/result.interface'
-
+import {InjectMysql,Mysql} from 'mysql2-nestjs'
 @Controller('article')
 export class ArticleController {
-  constructor(private readonly appService: ArticleService) {}
+  constructor(
+    private readonly appService: ArticleService,
+    @InjectMysql()
+    private readonly mysql: Mysql
+  ) {}
   @Get('list')
   async list(): Promise<Result> {
+    const [result, fields] = await this.mysql.query("SELECT * from user");
     let data = await this.appService.list();
-    return {code:200, message: '查询成功', data:data };
+    return {code:200, message: '查询成功', data:result };
   }
 
   @Get('add')

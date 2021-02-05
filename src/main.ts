@@ -1,4 +1,6 @@
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
+import { Logger } from '@nestjs/common';
 import { AppModule } from '@/app.module';
 import {appglobal} from '@/middlewares/appglobal/appglobal.middleware'
 import {GolbalauthGuard} from '@/utils/golbalguard/golbalauth.guard'
@@ -16,6 +18,9 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
   ////全局响应拦截器
   app.useGlobalInterceptors(new ResponseInterceptor());
-  await app.listen(3000);
+  const PORT = process.env.PORT || 8080;
+  await app.listen(PORT,() => {
+    Logger.log(`服务已经启动,请访问:http://localhost:${PORT}`);
+  });
 }
 bootstrap();

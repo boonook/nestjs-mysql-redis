@@ -75,12 +75,21 @@ export class GetConfigService {
 
 ```
 
-# 对redis的配置使用
+# 对redis的配置使用（nestjs-redis）
 
 ```text
 1.在app.module.ts中注入redis的配置文件
 2.对redis方法进行封装可查看utils下的redisModal
 3.使用时需先在对应的文件的moduls文件里的providers中进行注入
 4.在使用时直接在controller或者service中引入使用即可具体可参考views/cats
+```
+
+# 对mysql的配置使用（mysql2-nestjs）
+
+```text
+1.在app.module.ts中注入mysql的配置文件
+2.在需要使用的位置的controller引入@InjectMysql()
+                           private readonly mysql: Mysql
+3.const [result, fields] = await this.mysql.query("SELECT * from user");直接使用                           
 ```
 

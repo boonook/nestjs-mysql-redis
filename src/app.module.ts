@@ -6,17 +6,31 @@ import { ErrorsInterceptor } from '@/middlewares/error/errors.interceptor';
 import { CatsModule } from '@views/cats/cats.module';
 import { UserModule } from '@views/user/user.module';
 import { RedisModule} from 'nestjs-redis';
+import { ConfigModule } from 'nestjs-config';
+import {NestMysql2Module} from 'mysql2-nestjs'
+import * as path from 'path';
 
 let options={
   port: 6379,
   host: '127.0.0.1',
-  password: 'boonook',
+  password: '',
   db: 0
 };
 
 @Module({
   ////注入module
   imports: [
+    // 配置加载配置文件
+    ConfigModule.load(path.resolve(__dirname, 'config', '**/!(*.d).{ts,js}'), {
+      modifyConfigName: name => name.replace('.config', ''),
+    }),
+    NestMysql2Module.register({
+      host: "localhost",
+      port: 3306,
+      user: "root",
+      password: "1234",
+      database: 'zhdj',
+    }),
     ArticleModule,
     CatsModule,
     UserModule,
