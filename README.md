@@ -93,5 +93,5 @@ export class GetConfigService {
 3.const [result, fields] = await this.mysql.query("SELECT * from user");直接使用                           
 ```
 
-# 定义接口文档（http://localhost:3000/api/）
+# 定义接口文档（http://localhost:3000/api/）具体可参考cats文件
 
