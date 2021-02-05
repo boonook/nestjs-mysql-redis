@@ -1,14 +1,16 @@
 import { Module,MiddlewareConsumer } from '@nestjs/common';
+import * as path from 'path';
 import { APP_INTERCEPTOR } from '@nestjs/core';
+import { RedisModule} from 'nestjs-redis';
+import { ConfigModule } from 'nestjs-config';
+import {NestMysql2Module} from 'mysql2-nestjs'
 import { ArticleModule } from '@views/article/article.module';
 import { GlobalMiddleware } from '@/middlewares/global/global.middleware';
 import { ErrorsInterceptor } from '@/middlewares/error/errors.interceptor';
 import { CatsModule } from '@views/cats/cats.module';
 import { UserModule } from '@views/user/user.module';
-import { RedisModule} from 'nestjs-redis';
-import { ConfigModule } from 'nestjs-config';
-import {NestMysql2Module} from 'mysql2-nestjs'
-import * as path from 'path';
+import { GraphqlModule } from '@/views/graphql/graphql.module';
+
 
 let options={
   port: 6379,
@@ -34,7 +36,8 @@ let options={
     ArticleModule,
     CatsModule,
     UserModule,
-    RedisModule.register(options)
+    RedisModule.register(options),
+    GraphqlModule
   ],
   ///注入controllers
   controllers:[],

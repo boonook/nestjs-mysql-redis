@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post,Body,Delete } from '@nestjs/common';
+import { Controller, Get, Param, Post,Body,Delete,Ip } from '@nestjs/common';
 import { CatsService } from '@views/cats/cats.service';
 import {Result} from '@/middlewares/result/result.interface'
 import { GetConfigService } from '@/utils/getConfig';
@@ -47,7 +47,8 @@ export class CatsController {
   @ApiResponse({ status: 200, description: '请求成功'})
   @ApiResponse({ status: 403, description: 'Forbidden.'})
   @ApiResponse({ status: 501, description: '本次请求请带上token'})
-  async get(@Param('id') id: string,){
+  async get(@Param('id') id: string,@Ip() ip:string){
+    console.log('访问者的ip地址'+ip);
     return id
   }
 
