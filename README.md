@@ -1,7 +1,7 @@
 ```bash
 $ npm install
 ```
-
+eg：![效果](https://raw.githubusercontent.com/boonook/nestjs-mysql-redis/main/src/public/2020011414381332.png)
 ## Running the app
 
 ```bash
