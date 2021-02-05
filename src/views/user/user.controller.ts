@@ -1,7 +1,7 @@
-import { Body, Controller, Get, Post,HttpCode,UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post,UseGuards } from '@nestjs/common';
 import { UserService } from '@views/user/user.service';
 import {Result} from '@/middlewares/result/result.interface'
-import {UserLoginDto} from './dto/user.login.dto'
+import {UserLoginDTO} from './dto/user.login.dto'
 import {AuthGuard} from '@/utils/guard/auth.guard'
 
 @Controller('user')
@@ -16,7 +16,7 @@ export class UserController {
 
   @Post('login')
   @UseGuards(AuthGuard)
-  async login(@Body() userlogindto:UserLoginDto): Promise<Result>{
-    return { code:200,message: '操作成功',data:userlogindto};
+  async login(@Body() userlogindto:UserLoginDTO){
+    return userlogindto
   }
 }

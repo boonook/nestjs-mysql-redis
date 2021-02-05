@@ -5,12 +5,22 @@ import { GlobalMiddleware } from '@/middlewares/global/global.middleware';
 import { ErrorsInterceptor } from '@/middlewares/error/errors.interceptor';
 import { CatsModule } from '@views/cats/cats.module';
 import { UserModule } from '@views/user/user.module';
+import { RedisModule} from 'nestjs-redis';
+
+let options={
+  port: 6379,
+  host: '127.0.0.1',
+  password: 'boonook',
+  db: 0
+};
+
 @Module({
   ////注入module
   imports: [
     ArticleModule,
     CatsModule,
-    UserModule
+    UserModule,
+    RedisModule.register(options)
   ],
   ///注入controllers
   controllers:[],
