@@ -7867,7 +7867,7 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.5"
 
-moment@2.29.1, moment@^2.22.1:
+moment@2.29.1, moment@^2.22.1, moment@^2.29.1:
   version "2.29.1"
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha1-sr52n6MZQL6e7qZGnAdeNQBvo9M=

@@ -11,7 +11,6 @@ import { ErrorsInterceptor } from '@/middlewares/error/errors.interceptor';
 import { CatsModule } from '@views/cats/cats.module';
 import { UserModule } from '@views/user/user.module';
 import { GraphqlsModule } from '@/views/graphql/graphqls.module';
-import {GraphQLModule} from '@nestjs/graphql'
 import { HttprequestModule } from '@/views/httprequest/httprequest.module';
 
 let options={
@@ -34,10 +33,6 @@ let options={
       user: "root",
       password: "1234",
       database: 'zhdj',
-    }),
-    GraphQLModule.forRoot({
-      typePaths: ['./**/*.graphql'],
-      installSubscriptionHandlers: true
     }),
     ArticleModule,
     CatsModule,

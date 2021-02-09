@@ -95,6 +95,7 @@ export class GetConfigService {
 
 # 定义接口文档（http://localhost:3000/api/）具体可参考cats文件
 
+# 使用request模块请求第三方服务接口具体可参考httprequest文件
 
 # graphql目录测试api查询工具的使用
 
