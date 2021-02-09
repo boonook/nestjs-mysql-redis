@@ -12,6 +12,7 @@ import { CatsModule } from '@views/cats/cats.module';
 import { UserModule } from '@views/user/user.module';
 import { GraphqlsModule } from '@/views/graphql/graphqls.module';
 import {GraphQLModule} from '@nestjs/graphql'
+import { HttprequestModule } from '@/views/httprequest/httprequest.module';
 
 let options={
   port: 6379,
@@ -42,7 +43,8 @@ let options={
     CatsModule,
     UserModule,
     RedisModule.register(options),
-    GraphqlsModule
+    GraphqlsModule,
+    HttprequestModule
   ],
   ///注入controllers
   controllers:[],
