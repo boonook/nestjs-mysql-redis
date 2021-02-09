@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Body, Controller, Get, Post,UseGuards } from '@nestjs/common';
 import { UserService } from '@views/user/user.service';
 import {Result} from '@/middlewares/result/result.interface'

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Module,MiddlewareConsumer } from '@nestjs/common';
 import * as path from 'path';
 import { APP_INTERCEPTOR } from '@nestjs/core';
@@ -9,8 +10,8 @@ import { GlobalMiddleware } from '@/middlewares/global/global.middleware';
 import { ErrorsInterceptor } from '@/middlewares/error/errors.interceptor';
 import { CatsModule } from '@views/cats/cats.module';
 import { UserModule } from '@views/user/user.module';
-import { GraphqlModule } from '@/views/graphql/graphql.module';
-
+import { GraphqlsModule } from '@/views/graphql/graphqls.module';
+import {GraphQLModule} from '@nestjs/graphql'
 
 let options={
   port: 6379,
@@ -33,11 +34,15 @@ let options={
       password: "1234",
       database: 'zhdj',
     }),
+    GraphQLModule.forRoot({
+      typePaths: ['./**/*.graphql'],
+      installSubscriptionHandlers: true
+    }),
     ArticleModule,
     CatsModule,
     UserModule,
     RedisModule.register(options),
-    GraphqlModule
+    GraphqlsModule
   ],
   ///注入controllers
   controllers:[],

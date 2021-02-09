@@ -1,7 +1,9 @@
-import { Controller, Get, Query, Param, Delete, HttpCode } from '@nestjs/common';
+import { Controller, Get, Query, Param, Delete } from '@nestjs/common';
 import { ArticleService } from './article.service';
 import {Result} from '@/middlewares/result/result.interface'
-import {InjectMysql,Mysql} from 'mysql2-nestjs'
+import {InjectMysql,Mysql} from 'mysql2-nestjs';
+
+
 @Controller('article')
 export class ArticleController {
   constructor(
@@ -17,7 +19,8 @@ export class ArticleController {
   }
 
   @Get('add')
-  async add(@Query() query): Promise<Result>{
+  async add(@Query() query){
+    // return  await this.articleResolver.getHello();
     return {code:200, message: '查询成功', data:'123' };
   }
 

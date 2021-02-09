@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+// @ts-ignore
 @Injectable()
 export class ArticleService {
   list(){

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Module } from '@nestjs/common';
 import { CatsController } from '@views/cats/cats.controller';
 import { CatsService } from '@views/cats/cats.service';

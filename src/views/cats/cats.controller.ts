@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Controller, Get, Param, Post,Body,Delete,Ip } from '@nestjs/common';
 import { CatsService } from '@views/cats/cats.service';
 import {Result} from '@/middlewares/result/result.interface'
