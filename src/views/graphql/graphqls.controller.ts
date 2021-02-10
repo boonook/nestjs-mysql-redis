@@ -1,5 +1,7 @@
 // @ts-ignore
 import { Controller, Get } from '@nestjs/common';
+const config = require('../../config/database.config');
+
 @Controller('graphql')
 export class GraphqlsController {
   constructor(
@@ -9,6 +11,7 @@ export class GraphqlsController {
   @Get('list')
   async list(){
     const env = process.env.NODE_ENV;
-    return  `graphql---${env}`
+    console.log(config.default);
+    return  `graphql---${env}--${config.default.dev.sql.port}`
   }
 }

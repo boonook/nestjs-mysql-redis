@@ -1,9 +1,34 @@
 export default {
-  type: process.env.DB_TYPE,
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  database: process.env.DB_DATABASE,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  logging: true,
+  dev:{
+    PORT:'3001',
+    sql:{
+      host: "localhost",
+      port: 3306,
+      user: "root",
+      password: "1234",
+      database: 'zhdj',
+    },
+    redis:{
+      port: 6379,
+      host: '127.0.0.1',
+      password: '',
+      db: 0
+    }
+  },
+  pro:{
+    PORT:'3000',
+    sql:{
+      host: "localhost",
+      port: 3306,
+      user: "root",
+      password: "1234",
+      database: 'zhdj',
+    },
+    redis:{
+      port: 6379,
+      host: '127.0.0.1',
+      password: '',
+      db: 0
+    }
+  }
 };

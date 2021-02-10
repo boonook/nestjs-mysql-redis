@@ -8,6 +8,10 @@ import {HttpExceptionFilter} from '@/utils/filter/http-exception.filter'
 import {ResponseInterceptor} from '@/utils/interceptor/response.interceptor'
 import {MyLogger} from '@/utils/myLogger/myLogger'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+const config = require('./config/database.config');
+const env = process.env.NODE_ENV;
+const appConfig = config.default[env+''==='development'?'dev':'pro'];
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule,{logger: new MyLogger(),});
   ///配置网络请求跨域
@@ -20,9 +24,9 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
   ////全局响应拦截器
   app.useGlobalInterceptors(new ResponseInterceptor());
-  const PORT = process.env.PORT || 8080;
+  const PORT = appConfig.PORT || 8080;
   /**
-   * 自定义接口文档start
+   * 自定义接口文档starty
    * **/
   const config = new DocumentBuilder()
     .setTitle('nestjs+mysql+redis')

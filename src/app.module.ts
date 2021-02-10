@@ -12,12 +12,14 @@ import { CatsModule } from '@views/cats/cats.module';
 import { UserModule } from '@views/user/user.module';
 import { GraphqlsModule } from '@/views/graphql/graphqls.module';
 import { HttprequestModule } from '@/views/httprequest/httprequest.module';
-
+const config = require('./config/database.config');
+const env = process.env.NODE_ENV;
+const appConfig = config.default[env+''==='development'?'dev':'pro'];
 let options={
-  port: 6379,
-  host: '127.0.0.1',
-  password: '',
-  db: 0
+  port:appConfig.redis.port,
+  host:appConfig.redis.host,
+  password:appConfig.redis.password,
+  db:appConfig.redis.db,
 };
 
 @Module({
@@ -28,11 +30,11 @@ let options={
       modifyConfigName: name => name.replace('.config', ''),
     }),
     NestMysql2Module.register({
-      host: "localhost",
-      port: 3306,
-      user: "root",
-      password: "1234",
-      database: 'zhdj',
+      host:appConfig.sql.host,
+      port:appConfig.sql.port,
+      user:appConfig.sql.user,
+      password:appConfig.sql.password,
+      database:appConfig.sql.database,
     }),
     ArticleModule,
     CatsModule,
