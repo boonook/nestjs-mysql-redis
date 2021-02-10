@@ -48,8 +48,9 @@ let options={
     {
       provide: APP_INTERCEPTOR,   // 全局拦截器，这里使用全局异常拦截器改写异常消息结构
       useClass: ErrorsInterceptor
-    }
-  ]
+    },
+  ],
+  exports: []
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

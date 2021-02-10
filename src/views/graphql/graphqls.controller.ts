@@ -1,10 +1,14 @@
 // @ts-ignore
 import { Controller, Get } from '@nestjs/common';
-
 @Controller('graphql')
 export class GraphqlsController {
+  constructor(
+
+  ) {}
+
   @Get('list')
   async list(){
-    return  'graphql'
+    const env = process.env.NODE_ENV;
+    return  `graphql---${env}`
   }
 }

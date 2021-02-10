@@ -99,3 +99,5 @@ export class GetConfigService {
 
 # graphql目录测试api查询工具的使用
 
+# process.env.NODE_ENV通过这种形式可以区分开发环境（development）与生产环境（production）
+

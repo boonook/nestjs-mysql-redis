@@ -1509,6 +1509,14 @@
     optional "0.1.4"
     tslib "2.1.0"
 
+"@nestjs/websockets@^7.6.11":
+  version "7.6.11"
+  resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/@nestjs/websockets/-/websockets-7.6.11.tgz#f990ca1be4065c1ff1be16696523b5f656a81ef2"
+  integrity sha1-+ZDKG+QGXB/xvhZpZSO19laoHvI=
+  dependencies:
+    iterare "1.2.1"
+    tslib "2.1.0"
+
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -4307,6 +4315,13 @@ create-require@^1.1.0:
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha1-wdfo8eX2z8n/ZfnNNS03NIdWwzM=
 
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha1-hlJkspZ33AFbqEGJGJZd0jL8VM8=
+  dependencies:
+    cross-spawn "^7.0.1"
+
 cross-fetch@3.0.6, cross-fetch@^3.0.4:
   version "3.0.6"
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/cross-fetch/-/cross-fetch-3.0.6.tgz#3a4040bc8941e653e0e9cf17f29ebcd177d3365c"
@@ -4334,7 +4349,7 @@ cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^7.0.0, cross-spawn@^7.0.2:
+cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2:
   version "7.0.3"
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha1-9zqFudXUHQRVUcF34ogtSshXKKY=
