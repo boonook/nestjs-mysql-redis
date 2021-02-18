@@ -8,12 +8,14 @@ import {HttpExceptionFilter} from '@/utils/filter/http-exception.filter'
 import {ResponseInterceptor} from '@/utils/interceptor/response.interceptor'
 import {MyLogger} from '@/utils/myLogger/myLogger'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { join } from 'path';
+import {NestExpressApplication} from '@nestjs/platform-express'
 const config = require('./config/database.config');
 const env = process.env.NODE_ENV;
 const appConfig = config.default[env+''==='development'?'dev':'pro'];
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule,{logger: new MyLogger(),});
+  const app = await NestFactory.create<NestExpressApplication>(AppModule,{logger: new MyLogger(),});
   ///配置网络请求跨域
   app.enableCors();
   ///配置全局中间件,支持多个全局中间件
@@ -24,6 +26,9 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
   ////全局响应拦截器
   app.useGlobalInterceptors(new ResponseInterceptor());
+  app.useStaticAssets(join(__dirname, '../src', 'public'),{
+    prefix: '/static/', ///设置虚拟路径
+  }); //http://localhost:3003/static/xxx.txt
   const PORT = appConfig.PORT || 8080;
   /**
    * 自定义接口文档starty

@@ -1,6 +1,6 @@
 export default {
   dev:{
-    PORT:'3001',
+    PORT:'3003',
     sql:{
       host: "localhost",
       port: 3306,

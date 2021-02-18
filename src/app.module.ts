@@ -43,7 +43,7 @@ tools.printLog();
     UserModule,
     RedisModule.register(options),
     GraphqlsModule,
-    HttprequestModule
+    HttprequestModule,
   ],
   ///注入controllers
   controllers:[],
