@@ -101,3 +101,4 @@ export class GetConfigService {
 
 # process.env.NODE_ENV通过这种形式可以区分开发环境（development）与生产环境（production）
 
+# 通过就访问服务器中的静态资源文件具体可参考app.module.ts文件
