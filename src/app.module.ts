@@ -13,6 +13,7 @@ import { UserModule } from '@views/user/user.module';
 import { GraphqlsModule } from '@/views/graphql/graphqls.module';
 import { HttprequestModule } from '@/views/httprequest/httprequest.module';
 const config = require('./config/database.config');
+const tools = require('./utils/tools');
 const env = process.env.NODE_ENV;
 const appConfig = config.default[env+''==='development'?'dev':'pro'];
 let options={
@@ -21,6 +22,7 @@ let options={
   password:appConfig.redis.password,
   db:appConfig.redis.db,
 };
+tools.printLog();
 
 @Module({
   ////注入module
