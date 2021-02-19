@@ -26,7 +26,10 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
   ////全局响应拦截器
   app.useGlobalInterceptors(new ResponseInterceptor());
-  app.useStaticAssets(join(__dirname, '../src', 'public'),{
+  // app.useStaticAssets(join(__dirname, '../src', 'public'),{
+  //   prefix: '/static/', ///设置虚拟路径
+  // }); //http://localhost:3003/static/xxx.txt
+  app.useStaticAssets(join(__dirname, '..', 'public'),{
     prefix: '/static/', ///设置虚拟路径
   }); //http://localhost:3003/static/xxx.txt
   const PORT = appConfig.PORT || 8080;

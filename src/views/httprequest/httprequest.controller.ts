@@ -1,7 +1,7 @@
 import { Controller, Get,Logger } from '@nestjs/common';
 import {HttprequestService} from './httprequest.service'
 import { join } from 'path';
-import {readFile} from 'fs'
+import {readFile,readFileSync} from 'fs'
 @Controller('httprequest')
 export class HttprequestController {
   constructor(
@@ -15,10 +15,7 @@ export class HttprequestController {
 
   @Get('file')
   async file(){
-    const file = join(__dirname, 'city.json');
-    let data = await readFile(file, 'utf-8', function(err, data) {
-      return {err,data}
-    })
-    console.log(data)
+    let data = readFileSync('./public/json/city.json');
+    return {code:200, message: '查询成功', data:data.toString()};
   }
 }
