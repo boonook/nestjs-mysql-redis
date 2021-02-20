@@ -27,7 +27,7 @@
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.5.1",
     "@nestjs/swagger": "^4.7.12",
-    "@nestjs/websockets": "^7.6.11",
+    "@nestjs/websockets": "^7.6.12",
     "apollo": "^2.32.1",
     "apollo-server-express": "^2.19.2",
     "class-transformer": "^0.3.2",

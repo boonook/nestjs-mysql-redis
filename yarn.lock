@@ -1509,10 +1509,10 @@
     optional "0.1.4"
     tslib "2.1.0"
 
-"@nestjs/websockets@^7.6.11":
-  version "7.6.11"
-  resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/@nestjs/websockets/-/websockets-7.6.11.tgz#f990ca1be4065c1ff1be16696523b5f656a81ef2"
-  integrity sha1-+ZDKG+QGXB/xvhZpZSO19laoHvI=
+"@nestjs/websockets@^7.6.12":
+  version "7.6.12"
+  resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/@nestjs/websockets/-/websockets-7.6.12.tgz#d053967d972fe5bd86bb83cbf82db86116e0eaf5"
+  integrity sha1-0FOWfZcv5b2Gu4PL+C24YRbg6vU=
   dependencies:
     iterare "1.2.1"
     tslib "2.1.0"

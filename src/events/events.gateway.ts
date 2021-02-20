@@ -1,9 +1,19 @@
-import { SubscribeMessage, WebSocketGateway } from '@nestjs/websockets';
+import { SubscribeMessage, WebSocketGateway, WebSocketServer, WsResponse } from '@nestjs/websockets';
+import { from, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-@WebSocketGateway({ namespace:'message', port :5000})
+@WebSocketGateway()
 export class EventsGateway {
-  @SubscribeMessage('message')
-  handleMessage(client: any, payload: any): string {
-    return 'Hello world!';
+  @WebSocketServer()
+  server;
+
+  @SubscribeMessage('events')
+  findAll(client, data): Observable<WsResponse<number>> {
+    return from([1, 2, 3]).pipe(map(item => ({ event: 'events', data: item })));
+  }
+
+  @SubscribeMessage('identity')
+  async identity(client, data: number): Promise<number> {
+    return data;
   }
 }
