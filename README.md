@@ -104,3 +104,5 @@ export class GetConfigService {
 # 通过就访问服务器中的静态资源文件具体可参考app.module.ts文件
 
 # nestjs通过fs模块读取静态资源文件
+
+# 公共方法的封装可采用utils/tools.ts以及utils/ways.ts（推荐）

@@ -13,6 +13,7 @@ import { UserModule } from '@views/user/user.module';
 import { GraphqlsModule } from '@/views/graphql/graphqls.module';
 import { HttprequestModule } from '@/views/httprequest/httprequest.module';
 import { EventsModule } from '@/events/events.module'
+import {Ways} from '@/utils/ways'
 const config = require('./config/database.config');
 const tools = require('./utils/tools');
 const env = process.env.NODE_ENV;
@@ -24,6 +25,7 @@ let options={
   db:appConfig.redis.db,
 };
 tools.printLog();
+Ways.startServer();
 
 @Module({
   ////注入module
