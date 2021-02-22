@@ -18,9 +18,4 @@ export class HttprequestController {
     let data = readFileSync('./public/json/city.json');
     return {code:200, message: '查询成功', data:data.toString()};
   }
-
-  @Get('wsInfo')
-  async wsInfo(){
-
-  }
 }

@@ -1,3 +1,4 @@
+# 对应的h5测试地址https://github.com/boonook/vue-egg-nest
 ```bash
 $ npm install
 ```
@@ -106,3 +107,5 @@ export class GetConfigService {
 # nestjs通过fs模块读取静态资源文件
 
 # 公共方法的封装可采用utils/tools.ts以及utils/ways.ts（推荐）
+
+# 新引入了webSocket的消息发送与接收
