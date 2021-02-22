@@ -44,6 +44,26 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
+  /***
+   * 消息通知，给客户端发送消息，接收来自客户端啊送过来的消息
+   * **/
+  const webSocketServer_2 = require('ws').Server;
+  const wss_2 = new webSocketServer_2({
+    port:'3007'
+  });
+  wss_2.on('connection',function(ws) {
+    try {
+      ///给客户端发送消息
+      ws.send('来自服务端的消息');
+      Logger.log('服务器连接建立成功');
+      ///接口客户端发送过来的消息
+      ws.on('message',function(msg) {
+        ws.send('来自客户端的消息'+msg)
+      })
+    }catch(e){
+      Logger.warn('服务器连接建立失败，'+e)
+    }
+  })
   /**
    * 自定义接口文档start
    * **/

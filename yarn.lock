@@ -11013,6 +11013,11 @@ ws@^6.0.0:
   dependencies:
     async-limiter "~1.0.0"
 
+ws@^7.4.3:
+  version "7.4.3"
+  resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/ws/-/ws-7.4.3.tgz#1f9643de34a543b8edb124bdcbc457ae55a6e5cd"
+  integrity sha1-H5ZD3jSlQ7jtsSS9y8RXrlWm5c0=
+
 xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
