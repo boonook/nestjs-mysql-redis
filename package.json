@@ -35,7 +35,6 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
-    "graphql": "^15.5.0",
     "graphql-tools": "^7.0.2",
     "moment": "^2.29.1",
     "mysql2-nestjs": "^0.1.1",

@@ -5863,7 +5863,7 @@ graphql-ws@4.1.0:
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/graphql-ws/-/graphql-ws-4.1.0.tgz#cebe281474b5501d7be66210fb5711633b27fd78"
   integrity sha1-zr4oFHS1UB175mIQ+1cRYzsn/Xg=
 
-"graphql@14.0.2 - 14.2.0 || ^14.3.1 || ^15.0.0", graphql@^15.3.0, graphql@^15.5.0:
+"graphql@14.0.2 - 14.2.0 || ^14.3.1 || ^15.0.0", graphql@^15.3.0:
   version "15.5.0"
   resolved "http://mvn.133ec.com:8081/nexus/content/groups/npm_all/graphql/-/graphql-15.5.0.tgz#39d19494dbe69d1ea719915b578bf920344a69d5"
   integrity sha1-OdGUlNvmnR6nGZFbV4v5IDRKadU=

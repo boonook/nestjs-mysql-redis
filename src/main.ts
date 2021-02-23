@@ -44,9 +44,7 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
-  /***
-   * 消息通知，给客户端发送消息，接收来自客户端啊送过来的消息---------------------------------start
-   * **/
+  /**** 消息通知，给客户端发送消息，接收来自客户端啊送过来的消息---------------------------------start* **/
   const webSocketServer_2 = require('ws').Server;
   const wss_2 = new webSocketServer_2({
     port:'3007'
@@ -65,9 +63,7 @@ async function bootstrap() {
       Logger.warn('服务器连接建立失败，'+e)
     }
   });
-  /***
-   * 消息通知，给客户端发送消息，接收来自客户端啊送过来的消息---------------------------------end
-   * **/
+  /**** 消息通知，给客户端发送消息，接收来自客户端啊送过来的消息---------------------------------end* **/
   /**
    * 自定义接口文档start
    * **/

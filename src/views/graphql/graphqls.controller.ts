@@ -10,8 +10,6 @@ export class GraphqlsController {
 
   @Get('list')
   async list(){
-    const env = process.env.NODE_ENV;
-    console.log(config.default);
-    return  `graphql---${env}--${config.default.dev.sql.port}`
+
   }
 }
