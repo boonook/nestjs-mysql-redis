@@ -109,3 +109,5 @@ export class GetConfigService {
 # 公共方法的封装可采用utils/tools.ts以及utils/ways.ts（推荐）
 
 # 新引入了webSocket的消息发送与接收
+
+# 自定义装饰器
